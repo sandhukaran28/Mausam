@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.mausam.R;
+import com.example.mausam.utilities.NetworkUtils;
 
 public class MainActivity extends AppCompatActivity {
    private EditText editText;
@@ -28,16 +29,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void query(){
 
-    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int selected=item.getItemId();
         if(selected==R.id.search){
-         query();
+            NetworkUtils.volley(this);
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
